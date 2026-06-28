@@ -1,16 +1,146 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/home/header.astro';
-import Empresas from '../components/home/Empresas.astro';
-import AboutHome from '../components/home/AboutHome.astro';
-import MisionVision from '../components/home/MisionVision.astro';
-import FAQ from '../components/home/FAQ.astro';
+import Layout from "../layouts/Layout.astro";
+import { blogPosts } from "../data/blogData.js";
+
+const services = [
+  ["Public Hospital Navigation", "Understand how Chinese public hospitals work, when they may be suitable, and what foreign patients should prepare before visiting."],
+  ["International Department Guidance", "Learn how international departments in Chinese hospitals differ from regular outpatient departments in cost, service model, language support, and appointment flow."],
+  ["Appointment Route Preparation", "Get practical guidance on possible appointment routes, hospital registration steps, and documents commonly needed by foreign visitors."],
+  ["Medical Visit Checklist", "Prepare key information, questions, translations, payment methods, and visit expectations before seeing a doctor in China."],
+  ["Payment & Insurance Information", "Understand common payment methods, self-pay expectations, and questions to ask your insurer before seeking care in China."],
+  ["Interpreter / Companion Coordination", "For selected cities and situations, we may help coordinate non-clinical language or visit companion support."],
+];
+
+const audiences = [
+  "International visitors coming to China",
+  "Expats living in China",
+  "International families",
+  "Global patients exploring care options in China",
+  "Business travelers needing practical hospital access information",
+  "Foreigners unsure how Chinese hospitals work",
+];
+
+const challenges = [
+  "Not knowing whether to choose a public hospital, private hospital, or international department",
+  "Difficulty booking appointments without Chinese ID, local apps, or Chinese language ability",
+  "Uncertainty about payment methods and insurance acceptance",
+  "Confusion around hospital departments, doctor levels, and registration procedures",
+  "Lack of preparation before visiting a hospital",
+  "Anxiety caused by language and cultural differences",
+];
+
+const hospitalOptions = [
+  ["Public Hospitals", "Complex conditions, specialist care, major city tertiary hospitals", "Strong clinical resources, experienced doctors, broad specialty coverage", "Crowded, Chinese-language process, short consultation time, complex registration"],
+  ["Private Hospitals / Clinics", "Basic care, dental, eye care, health checks, simple outpatient needs", "More comfortable environment, often easier communication, shorter waiting time", "Higher cost, variable specialty depth, may not be ideal for complex cases"],
+  ["International Departments", "Foreign patients, self-pay patients, international insurance users, people needing more privacy and service support", "Better service experience, more time per visit, easier process, possible English support", "Higher cost, often self-pay, service scope varies by hospital"],
+];
+
+const faqs = [
+  ["Can foreigners visit public hospitals in China?", "Yes. Foreigners can usually visit public hospitals in China, but the process may require local registration, Chinese-language communication, and payment preparation. The experience can vary significantly by city, hospital, and department."],
+  ["Should I choose a public hospital, private hospital, or international department?", "It depends on your medical need, city, budget, language needs, and urgency. Public hospitals are often stronger for complex specialist care, while private hospitals and international departments may provide a more comfortable and easier service experience."],
+  ["Do Chinese hospitals accept international insurance?", "Some private hospitals and international departments may work with selected international insurers, but many hospital visits in China are self-pay first. Patients should confirm coverage, direct billing, reimbursement rules, and required documents with their insurer before the visit."],
+  ["How do I book a hospital appointment in China without a Chinese ID?", "Appointment routes vary by hospital. Some hospitals allow passport registration, while others rely heavily on Chinese apps, local phone numbers, or on-site registration. FlorishMed China helps you understand possible routes before your visit."],
+  ["Can FlorishMed China recommend a doctor?", "FlorishMed China can help you understand hospital and department options based on publicly available information and practical access considerations. We do not provide medical diagnosis, treatment decisions, or guaranteed doctor recommendations."],
+  ["Does FlorishMed China provide medical advice?", "No. FlorishMed China provides non-clinical hospital navigation and healthcare access information only. We do not provide diagnosis, treatment, emergency care, medical guarantees, or official hospital representation unless explicitly authorized."],
+];
+
+const disclaimer = "FlorishMed China provides non-clinical hospital navigation and healthcare access information only. We do not provide medical diagnosis, treatment, emergency care, medical guarantees, or official hospital representation unless explicitly authorized. Information on this website is for general guidance and should not replace professional medical advice from licensed healthcare providers.";
 ---
 
 <Layout>
-    <Header />
-    <Empresas />
-    <AboutHome />
-    <MisionVision />
-    <FAQ />
+  <main>
+    <section class="bg-[#0B1F3A] text-white">
+      <div class="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <p class="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-[#D94A38]">China healthcare access guidance</p>
+          <h1 class="max-w-4xl text-4xl font-extrabold leading-tight md:text-6xl">Navigate Medical Care in China with Confidence</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-white/78 md:text-xl">FlorishMed China helps international visitors, expats, and global patients understand hospital options, appointment routes, payment methods, and practical access to medical care in China.</p>
+          <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+            <a href="/contact" class="rounded-full bg-[#D94A38] px-7 py-3.5 text-center font-bold text-white transition hover:bg-[#b93a2c]">Request Guidance</a>
+            <a href="/blog" class="rounded-full border border-white/35 px-7 py-3.5 text-center font-bold text-white transition hover:border-white hover:bg-white/10">Read the China Healthcare Guide</a>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-lg border border-white/12 bg-white/8 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=1400&auto=format&fit=crop" alt="China city skyline representing healthcare access in major Chinese cities" class="h-[360px] w-full object-cover md:h-[520px]" />
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 py-20">
+      <div class="mx-auto max-w-7xl">
+        <h2 class="text-3xl font-extrabold text-[#0B1F3A] md:text-4xl">Who We Help</h2>
+        <div class="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {audiences.map((item) => <div class="rounded-lg border border-[#0B1F3A]/10 bg-white p-6 shadow-sm"><p class="font-bold leading-7 text-[#1F2933]">{item}</p></div>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white px-5 py-20">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div>
+          <h2 class="text-3xl font-extrabold text-[#0B1F3A] md:text-4xl">Common Challenges Foreigners Face in Chinese Hospitals</h2>
+          <p class="mt-5 text-lg leading-8 text-[#6B7280]">Hospital systems can be difficult to navigate when language, registration routes, payment expectations, and department choices are unfamiliar.</p>
+        </div>
+        <div class="grid gap-4">
+          {challenges.map((challenge) => <div class="flex gap-4 rounded-lg bg-[#F7F3EC] p-5"><span class="mt-1 h-3 w-3 shrink-0 rounded-full bg-[#D94A38]"></span><p class="font-semibold leading-7 text-[#1F2933]">{challenge}</p></div>)}
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="px-5 py-20">
+      <div class="mx-auto max-w-7xl">
+        <h2 class="text-3xl font-extrabold text-[#0B1F3A] md:text-4xl">How We Help</h2>
+        <p class="mt-4 max-w-3xl text-lg leading-8 text-[#6B7280]">Practical, non-clinical guidance for understanding hospital access before you seek care in China.</p>
+        <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {services.map(([title, description]) => <article class="rounded-lg border border-[#0B1F3A]/10 bg-white p-6 shadow-sm"><h3 class="text-xl font-extrabold text-[#0B1F3A]">{title}</h3><p class="mt-4 leading-7 text-[#6B7280]">{description}</p></article>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#0B1F3A] px-5 py-20 text-white">
+      <div class="mx-auto max-w-7xl">
+        <h2 class="max-w-4xl text-3xl font-extrabold md:text-4xl">Public Hospitals, Private Hospitals, and International Departments in China</h2>
+        <div class="mt-10 overflow-x-auto rounded-lg border border-white/12">
+          <table class="min-w-[900px] w-full border-collapse bg-white text-left text-[#1F2933]">
+            <thead class="bg-[#D94A38] text-white"><tr><th class="p-5">Hospital Option</th><th class="p-5">Best For</th><th class="p-5">Advantages</th><th class="p-5">Possible Challenges</th></tr></thead>
+            <tbody>{hospitalOptions.map(([option, bestFor, advantages, challenges]) => <tr class="border-b border-[#0B1F3A]/10 last:border-0"><td class="p-5 font-extrabold text-[#0B1F3A]">{option}</td><td class="p-5 leading-7">{bestFor}</td><td class="p-5 leading-7">{advantages}</td><td class="p-5 leading-7">{challenges}</td></tr>)}</tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div><h2 class="text-3xl font-extrabold text-[#0B1F3A] md:text-4xl">China Healthcare Guide</h2><p class="mt-4 max-w-2xl text-lg leading-8 text-[#6B7280]">Plain-English explainers for international visitors, expats, and global patients preparing for care in China.</p></div>
+          <a href="/blog" class="font-extrabold text-[#D94A38]">View all guide topics</a>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          {blogPosts.slice(0, 3).map((post) => <article class="rounded-lg bg-white p-6 shadow-sm"><h3 class="text-xl font-extrabold leading-7 text-[#0B1F3A]">{post.title}</h3><p class="mt-4 leading-7 text-[#6B7280]">{post.description}</p></article>)}
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="bg-white px-5 py-20">
+      <div class="mx-auto max-w-5xl">
+        <h2 class="text-center text-3xl font-extrabold text-[#0B1F3A] md:text-4xl">Patient FAQ</h2>
+        <div class="mt-10 grid gap-4">{faqs.map(([question, answer]) => <details class="rounded-lg border border-[#0B1F3A]/10 bg-[#F7F3EC] p-6"><summary class="cursor-pointer text-lg font-extrabold text-[#0B1F3A]">{question}</summary><p class="mt-4 leading-7 text-[#6B7280]">{answer}</p></details>)}</div>
+      </div>
+    </section>
+
+    <section id="about" class="px-5 py-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1400&auto=format&fit=crop" alt="Calm professional healthcare building interior" class="h-[360px] w-full rounded-lg object-cover shadow-lg" />
+        <div>
+          <h2 class="text-3xl font-extrabold text-[#0B1F3A] md:text-4xl">About FlorishMed China</h2>
+          <p class="mt-5 leading-8 text-[#6B7280]">FlorishMed China was founded to help international visitors and expats better understand China's healthcare system before seeking medical care.</p>
+          <p class="mt-4 leading-8 text-[#6B7280]">Our founder has around 10 years of experience in the international medical device industry, working across overseas markets, hospital-related communication, medical product access, exhibitions, distributors, and cross-cultural healthcare communication. This background gives FlorishMed China a practical understanding of how healthcare systems, hospitals, doctors, and international patients often interact.</p>
+          <p class="mt-4 leading-8 text-[#6B7280]">FlorishMed China focuses on patient benefit, responsible communication, and practical non-clinical guidance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#0B1F3A] px-5 py-16 text-white"><div class="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center"><div><h2 class="text-3xl font-extrabold">Request Hospital Navigation Guidance</h2><p class="mt-3 max-w-2xl leading-7 text-white/75">Share your planned city, timing, and access questions so we can understand what practical guidance may be useful.</p></div><a href="/contact" class="rounded-full bg-[#D94A38] px-7 py-3.5 text-center font-bold text-white transition hover:bg-[#b93a2c]">Request Guidance</a></div></section>
+    <section class="px-5 py-12"><div class="mx-auto max-w-7xl rounded-lg border border-[#0B1F3A]/10 bg-white p-6"><h2 class="text-xl font-extrabold text-[#0B1F3A]">Disclaimer</h2><p class="mt-3 leading-7 text-[#6B7280]">{disclaimer}</p></div></section>
+  </main>
 </Layout>
