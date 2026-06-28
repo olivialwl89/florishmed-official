@@ -1,21 +1,28 @@
 ---
 import "../styles/global.css";
-import Navbar from '../components/common/navbar.astro'
-import Footer from '../components/common/footer.astro'
+import Navbar from "../components/common/navbar.astro";
+import Footer from "../components/common/footer.astro";
+
+const title = "FlorishMed China | China Hospital Navigation for International Visitors";
+const description =
+  "FlorishMed China helps international visitors, expats, and global patients understand hospital options, appointment routes, payment methods, and practical access to medical care in China.";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Obras Sociales</title>
-	</head>
-	<body>
-		<Navbar />
-		<slot />
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
 </html>
