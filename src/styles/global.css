@@ -5,8 +5,10 @@
 
 :root {
   --color-primary: #0b1f3a;
-  --color-accent: #d94a38;
-  --color-background: #f7f3ec;
+  --color-secondary: #35506b;
+  --color-accent: #d96b4f;
+  --color-background: #f3f5f7;
+  --color-surface: #ffffff;
   --color-text: #1f2933;
   --color-muted: #6b7280;
   --color-white: #ffffff;
