@@ -52,15 +52,15 @@ const disclaimer = "FlorishMed China provides non-clinical hospital navigation a
     <section class="bg-[#0B1F3A] text-white">
       <div class="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <p class="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-[#D94A38]">China healthcare access guidance</p>
+          <p class="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-[#D96B4F]">China healthcare access guidance</p>
           <h1 class="max-w-4xl text-4xl font-extrabold leading-tight md:text-6xl">Navigate Medical Care in China with Confidence</h1>
           <p class="mt-6 max-w-2xl text-lg leading-8 text-white/78 md:text-xl">FlorishMed China helps international visitors, expats, and global patients understand hospital options, appointment routes, payment methods, and practical access to medical care in China.</p>
           <div class="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a href="/contact" class="rounded-full bg-[#D94A38] px-7 py-3.5 text-center font-bold text-white transition hover:bg-[#b93a2c]">Request Guidance</a>
+            <a href="/contact" class="rounded-full bg-[#D96B4F] px-7 py-3.5 text-center font-bold text-white transition hover:bg-[#B8513C]">Request Guidance</a>
             <a href="/blog" class="rounded-full border border-white/35 px-7 py-3.5 text-center font-bold text-white transition hover:border-white hover:bg-white/10">Read the China Healthcare Guide</a>
           </div>
         </div>
-        <div class="overflow-hidden rounded-lg border border-white/12 bg-white/8 shadow-2xl">
+        <div class="overflow-hidden rounded-lg border border-[#35506B] bg-white/8 shadow-2xl">
           <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=1400&auto=format&fit=crop" alt="China city skyline representing healthcare access in major Chinese cities" class="h-[360px] w-full object-cover md:h-[520px]" />
         </div>
       </div>
@@ -70,19 +70,19 @@ const disclaimer = "FlorishMed China provides non-clinical hospital navigation a
       <div class="mx-auto max-w-7xl">
         <h2 class="text-3xl font-extrabold text-[#0B1F3A] md:text-4xl">Who We Help</h2>
         <div class="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {audiences.map((item) => <div class="rounded-lg border border-[#0B1F3A]/10 bg-white p-6 shadow-sm"><p class="font-bold leading-7 text-[#1F2933]">{item}</p></div>)}
+          {audiences.map((item) => <div class="rounded-lg border border-[#35506B]/15 bg-white p-6 shadow-sm"><p class="font-bold leading-7 text-[#1F2933]">{item}</p></div>)}
         </div>
       </div>
     </section>
 
-    <section class="bg-white px-5 py-20">
+    <section class="bg-[#F3F5F7] px-5 py-20">
       <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <h2 class="text-3xl font-extrabold text-[#0B1F3A] md:text-4xl">Common Challenges Foreigners Face in Chinese Hospitals</h2>
           <p class="mt-5 text-lg leading-8 text-[#6B7280]">Hospital systems can be difficult to navigate when language, registration routes, payment expectations, and department choices are unfamiliar.</p>
         </div>
         <div class="grid gap-4">
-          {challenges.map((challenge) => <div class="flex gap-4 rounded-lg bg-[#F7F3EC] p-5"><span class="mt-1 h-3 w-3 shrink-0 rounded-full bg-[#D94A38]"></span><p class="font-semibold leading-7 text-[#1F2933]">{challenge}</p></div>)}
+          {challenges.map((challenge) => <div class="flex gap-4 rounded-lg border border-[#35506B]/15 bg-white p-5"><span class="mt-1 h-3 w-3 shrink-0 rounded-full bg-[#D96B4F]"></span><p class="font-semibold leading-7 text-[#1F2933]">{challenge}</p></div>)}
         </div>
       </div>
     </section>
@@ -92,7 +92,7 @@ const disclaimer = "FlorishMed China provides non-clinical hospital navigation a
         <h2 class="text-3xl font-extrabold text-[#0B1F3A] md:text-4xl">How We Help</h2>
         <p class="mt-4 max-w-3xl text-lg leading-8 text-[#6B7280]">Practical, non-clinical guidance for understanding hospital access before you seek care in China.</p>
         <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {services.map(([title, description]) => <article class="rounded-lg border border-[#0B1F3A]/10 bg-white p-6 shadow-sm"><h3 class="text-xl font-extrabold text-[#0B1F3A]">{title}</h3><p class="mt-4 leading-7 text-[#6B7280]">{description}</p></article>)}
+          {services.map(([title, description]) => <article class="rounded-lg border border-[#35506B]/15 bg-white p-6 shadow-sm"><h3 class="text-xl font-extrabold text-[#0B1F3A]">{title}</h3><p class="mt-4 leading-7 text-[#6B7280]">{description}</p></article>)}
         </div>
       </div>
     </section>
@@ -100,10 +100,10 @@ const disclaimer = "FlorishMed China provides non-clinical hospital navigation a
     <section class="bg-[#0B1F3A] px-5 py-20 text-white">
       <div class="mx-auto max-w-7xl">
         <h2 class="max-w-4xl text-3xl font-extrabold md:text-4xl">Public Hospitals, Private Hospitals, and International Departments in China</h2>
-        <div class="mt-10 overflow-x-auto rounded-lg border border-white/12">
+        <div class="mt-10 overflow-x-auto rounded-lg border border-[#35506B]">
           <table class="min-w-[900px] w-full border-collapse bg-white text-left text-[#1F2933]">
-            <thead class="bg-[#D94A38] text-white"><tr><th class="p-5">Hospital Option</th><th class="p-5">Best For</th><th class="p-5">Advantages</th><th class="p-5">Possible Challenges</th></tr></thead>
-            <tbody>{hospitalOptions.map(([option, bestFor, advantages, challenges]) => <tr class="border-b border-[#0B1F3A]/10 last:border-0"><td class="p-5 font-extrabold text-[#0B1F3A]">{option}</td><td class="p-5 leading-7">{bestFor}</td><td class="p-5 leading-7">{advantages}</td><td class="p-5 leading-7">{challenges}</td></tr>)}</tbody>
+            <thead class="bg-[#35506B] text-white"><tr><th class="p-5">Hospital Option</th><th class="p-5">Best For</th><th class="p-5">Advantages</th><th class="p-5">Possible Challenges</th></tr></thead>
+            <tbody>{hospitalOptions.map(([option, bestFor, advantages, challenges]) => <tr class="border-b border-[#35506B]/15 last:border-0"><td class="p-5 font-extrabold text-[#0B1F3A]">{option}</td><td class="p-5 leading-7">{bestFor}</td><td class="p-5 leading-7">{advantages}</td><td class="p-5 leading-7">{challenges}</td></tr>)}</tbody>
           </table>
         </div>
       </div>
@@ -113,18 +113,18 @@ const disclaimer = "FlorishMed China provides non-clinical hospital navigation a
       <div class="mx-auto max-w-7xl">
         <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div><h2 class="text-3xl font-extrabold text-[#0B1F3A] md:text-4xl">China Healthcare Guide</h2><p class="mt-4 max-w-2xl text-lg leading-8 text-[#6B7280]">Plain-English explainers for international visitors, expats, and global patients preparing for care in China.</p></div>
-          <a href="/blog" class="font-extrabold text-[#D94A38]">View all guide topics</a>
+          <a href="/blog" class="font-extrabold text-[#D96B4F]">View all guide topics</a>
         </div>
         <div class="mt-10 grid gap-5 md:grid-cols-3">
-          {blogPosts.slice(0, 3).map((post) => <article class="rounded-lg bg-white p-6 shadow-sm"><h3 class="text-xl font-extrabold leading-7 text-[#0B1F3A]">{post.title}</h3><p class="mt-4 leading-7 text-[#6B7280]">{post.description}</p></article>)}
+          {blogPosts.slice(0, 3).map((post) => <article class="rounded-lg border border-[#35506B]/15 bg-white p-6 shadow-sm"><h3 class="text-xl font-extrabold leading-7 text-[#0B1F3A]">{post.title}</h3><p class="mt-4 leading-7 text-[#6B7280]">{post.description}</p></article>)}
         </div>
       </div>
     </section>
 
-    <section id="faq" class="bg-white px-5 py-20">
+    <section id="faq" class="bg-[#F3F5F7] px-5 py-20">
       <div class="mx-auto max-w-5xl">
         <h2 class="text-center text-3xl font-extrabold text-[#0B1F3A] md:text-4xl">Patient FAQ</h2>
-        <div class="mt-10 grid gap-4">{faqs.map(([question, answer]) => <details class="rounded-lg border border-[#0B1F3A]/10 bg-[#F7F3EC] p-6"><summary class="cursor-pointer text-lg font-extrabold text-[#0B1F3A]">{question}</summary><p class="mt-4 leading-7 text-[#6B7280]">{answer}</p></details>)}</div>
+        <div class="mt-10 grid gap-4">{faqs.map(([question, answer]) => <details class="rounded-lg border border-[#35506B]/15 bg-white p-6"><summary class="cursor-pointer text-lg font-extrabold text-[#0B1F3A]">{question}</summary><p class="mt-4 leading-7 text-[#6B7280]">{answer}</p></details>)}</div>
       </div>
     </section>
 
@@ -140,7 +140,7 @@ const disclaimer = "FlorishMed China provides non-clinical hospital navigation a
       </div>
     </section>
 
-    <section class="bg-[#0B1F3A] px-5 py-16 text-white"><div class="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center"><div><h2 class="text-3xl font-extrabold">Request Hospital Navigation Guidance</h2><p class="mt-3 max-w-2xl leading-7 text-white/75">Share your planned city, timing, and access questions so we can understand what practical guidance may be useful.</p></div><a href="/contact" class="rounded-full bg-[#D94A38] px-7 py-3.5 text-center font-bold text-white transition hover:bg-[#b93a2c]">Request Guidance</a></div></section>
-    <section class="px-5 py-12"><div class="mx-auto max-w-7xl rounded-lg border border-[#0B1F3A]/10 bg-white p-6"><h2 class="text-xl font-extrabold text-[#0B1F3A]">Disclaimer</h2><p class="mt-3 leading-7 text-[#6B7280]">{disclaimer}</p></div></section>
+    <section class="bg-[#0B1F3A] px-5 py-16 text-white"><div class="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center"><div><h2 class="text-3xl font-extrabold">Request Hospital Navigation Guidance</h2><p class="mt-3 max-w-2xl leading-7 text-white/75">Share your planned city, timing, and access questions so we can understand what practical guidance may be useful.</p></div><a href="/contact" class="rounded-full bg-[#D96B4F] px-7 py-3.5 text-center font-bold text-white transition hover:bg-[#B8513C]">Request Guidance</a></div></section>
+    <section class="px-5 py-12"><div class="mx-auto max-w-7xl rounded-lg border border-[#35506B]/15 bg-white p-6"><h2 class="text-xl font-extrabold text-[#0B1F3A]">Disclaimer</h2><p class="mt-3 leading-7 text-[#6B7280]">{disclaimer}</p></div></section>
   </main>
 </Layout>
